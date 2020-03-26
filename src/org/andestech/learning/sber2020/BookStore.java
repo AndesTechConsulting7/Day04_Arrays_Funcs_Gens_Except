@@ -1,6 +1,6 @@
 package org.andestech.learning.sber2020;
 
-public class BookStore<T> {
+public class BookStore<T extends Book> {
     private T data;
 
     public BookStore(T data) {
