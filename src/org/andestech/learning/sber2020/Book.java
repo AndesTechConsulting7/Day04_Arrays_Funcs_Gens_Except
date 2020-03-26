@@ -19,13 +19,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "author='" + author + '\'' +
-                ", title='" + title + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", id=" + id +
-                ", year=" + year +
-                '}';
+        return String.format("[%d], %s by %s, ISBN:%s, published:%d.",id,title,author,ISBN,year);
     }
 
     public String getAuthor() {
