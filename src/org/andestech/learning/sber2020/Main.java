@@ -11,9 +11,22 @@ public class Main {
         System.out.println("\b]");
     }
 
-    public static int summa(int[] vars){
+    public static int summa2(int[] vars){
+        int sum = 0;
+        for(int i=0; i< vars.length; i++) sum += vars[i];
+        return sum;
+    }
 
-        return 0;
+    public static int summa(int[] vars){
+        int sum = 0;
+        for(int d: vars) sum+=d;
+        return sum;
+    }
+
+    public static int summ(int ... vars){
+        int sum = 0;
+        for(int d: vars) sum+=d;
+        return sum;
     }
 
     public static void main(String[] args) {
@@ -29,6 +42,8 @@ public class Main {
         printArray(arr);
         printArray(arr0);
 
+        System.out.println("summ1=" + summ(1,2,3,4,5,6,7,8,9,10));
+        System.out.println("summ2=" + summa(new int[]{1,2,3,4,5,6,7,8,9,10}));
 
      }
 }
