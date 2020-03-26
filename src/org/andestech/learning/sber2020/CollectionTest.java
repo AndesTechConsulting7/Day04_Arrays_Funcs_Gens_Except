@@ -1,18 +1,15 @@
 package org.andestech.learning.sber2020;
 
+import static org.andestech.learning.sber2020.utils.ABSUtils.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class CollectionTest {
 
-    private static void printColl(List list)
-    {
-        for (Object o: list) System.out.print(o + ", ");
-        System.out.println("\b\b.");
-    }
-
-    public static void main(String[] args) {
+      public static void main(String[] args) {
 
         int a = 123;
         Integer a2 = a;
@@ -30,6 +27,21 @@ public class CollectionTest {
 
         List<Integer> arrList = new ArrayList<>(10);
         arrList.addAll(Arrays.asList(new Integer[]{1,2,-200,3,23,-4,8,34}));
+        printColl(arrList);
+        arrList.sort((x,y)-> {
+            //...
+            //...
+            return Math.abs(x)- Math.abs(y);
+        });
+        printColl(arrList);
+
+        echo();
+        arrList.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1-o2;
+            }
+        });
         printColl(arrList);
 
 
