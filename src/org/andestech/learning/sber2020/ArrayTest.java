@@ -1,8 +1,25 @@
 package org.andestech.learning.sber2020;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayTest {
+
+    public static String[] generatePasswords(int Lpass, int Npass)
+    { String[] passwords = new String[Npass];
+        for (int i = 0; i < Npass ; i++) passwords[i] = generatePassword(Lpass);
+        return passwords;
+    }
+
+    private static String generatePassword(int N)
+    { StringBuilder sb = new StringBuilder();
+      int min=33, max=126, np= max-min;
+        for (int i = 0; i < N; i++) {
+            int code = 33 + new Random().nextInt(np);
+            sb.append( (char)code );
+        }
+        return sb.toString();
+    }
 
     //-------------------------------
     public static void echo(String s, int N)
@@ -75,6 +92,11 @@ public class ArrayTest {
         int[] rarr2 = generateRandomArray(10,100);
         echo();
         printArray(rarr1); printArray(rarr2);
+        echo("+", 60);
+        for (int i = 0; i < 10; i++) System.out.println(generatePassword(15));
 
+        String[] pass = generatePasswords(8, 5);
+        echo();
+        System.out.println(Arrays.toString(pass));
     }
 }
