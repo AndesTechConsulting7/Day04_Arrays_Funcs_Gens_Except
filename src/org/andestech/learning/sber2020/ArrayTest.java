@@ -1,7 +1,32 @@
 package org.andestech.learning.sber2020;
 
-public class Main {
+import java.util.Random;
 
+public class ArrayTest {
+
+    //-------------------------------
+    public static void echo(String s, int N)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <N ; i++) sb.append(s);
+        System.out.println(sb.toString());
+
+    }
+
+    public static void echo() { echo("-", 70);}
+
+
+
+
+    public static int[] generateRandomArray(int N, int range)
+    {
+        int[] arr = new int[N];
+        for (int i = 0; i < N; i++) {
+            arr[i] = new Random().nextInt(range) - range/2;
+        }
+
+        return arr;
+    }
 
     public static void printArray(int[] arr)
     {
@@ -45,5 +70,11 @@ public class Main {
         System.out.println("summ1=" + summ(1,2,3,4,5,6,7,8,9,10));
         System.out.println("summ2=" + summa(new int[]{1,2,3,4,5,6,7,8,9,10}));
 
-     }
+        //---------------
+        int[] rarr1 = generateRandomArray(10,100);
+        int[] rarr2 = generateRandomArray(10,100);
+        echo();
+        printArray(rarr1); printArray(rarr2);
+
+    }
 }
